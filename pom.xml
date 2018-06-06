@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cocolian</groupId>
+		<artifactId>cocolian-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>cocolian-id</artifactId>
+	<packaging>pom</packaging>
+
+    <modules>
+    </modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+	</properties>
+
+	<dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+	<developers>
+		<developer>
+			<id>shamphone</id>
+			<name>Glory</name>
+			<email>liurongyao1216@gmail.com</email>
+			<organization>Excavator Software, Inc.</organization>
+			<organizationUrl>http://www.excavator.com</organizationUrl>
+		</developer>
+        <developer>
+            <id>shamphone</id>
+            <name>Tako</name>
+            <email>tako@gmail.com</email>
+            <organization>Excavator Software, Inc.</organization>
+            <organizationUrl>http://www.excavator.com</organizationUrl>
+        </developer>
+	</developers>
+	<scm>
+		<url>https://github.com/cocolian/cocolian-id</url>
+		<connection>scm:git:ssh://git@github.com:cocolian/cocolian-id.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:cocolian/cocolian-id.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>	
+</project>
