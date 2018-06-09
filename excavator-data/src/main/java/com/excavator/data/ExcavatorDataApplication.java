@@ -1,0 +1,12 @@
+package com.excavator.data;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ExcavatorDataApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExcavatorDataApplication.class, args);
+	}
+}

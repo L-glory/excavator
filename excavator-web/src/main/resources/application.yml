@@ -1,0 +1,13 @@
+--
+server:
+  servlet:
+    application-display-name: excavator-web
+  port: 1216
+
+spring:
+  profiles:
+    active: dev  # 默认激活dev
+  application:
+    name: excavator-web
+  mvc:
+    throw-exception-if-no-handler-found: true # 抛出404异常，方便做统一处理
