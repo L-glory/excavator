@@ -11,6 +11,7 @@
         <module>excavator-web</module>
         <module>excavator-admin</module>
         <module>excavator-data</module>
+        <module>excavator-discovery</module>
     </modules>
 
 	<properties>

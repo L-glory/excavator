@@ -1,0 +1,18 @@
+server:
+  port: 1216
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    application-display-name: excavator-discovery
+
+spring:
+  application:
+    #name: Cloud-Registry
+    name: excavator-discovery
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false

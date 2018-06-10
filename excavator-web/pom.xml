@@ -10,7 +10,7 @@
 
 	<artifactId>excavator-web</artifactId>
     <name>excavator: web</name>
-	<version>0.0.1-SNAPSHOT</version>
+    <version>${excavator.version}</version>
 	<packaging>jar</packaging>
 	<description>网络挖掘机应用网关</description>
 
