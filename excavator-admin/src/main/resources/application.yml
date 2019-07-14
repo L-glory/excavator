@@ -18,3 +18,12 @@ spring:
       maximum-pool-size: 20
       max-lifetime: 120000             # 最大存活时间2分钟
       pool-name: 'mysql-conn-pool'
+  redis:
+    host: localhost
+    database: 0
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 2
+        max-active: 10
+        max-wait: 2000ms

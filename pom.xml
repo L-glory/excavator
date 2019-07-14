@@ -19,8 +19,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
         <excavator.version>1.0.0-SNAPSHOT</excavator.version>
-		<spring-boot.version>2.0.2.RELEASE</spring-boot.version>
-        <spring-cloud.version>Finchley.RC2</spring-cloud.version>
+		<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich SR2</spring-cloud.version>
 	</properties>
 
 	<dependencyManagement>
@@ -38,31 +38,47 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.8</version>
             </dependency>
-
-
-            <!-- 常用插件 -->
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <!-- 常用maven插件版本管理 -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.21.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
@@ -77,24 +93,11 @@
 
 	<developers>
 		<developer>
-			<id>shamphone</id>
+			<id>Glory</id>
 			<name>Glory</name>
 			<email>liurongyao1216@gmail.com</email>
 			<organization>Excavator Software, Inc.</organization>
 			<organizationUrl>http://www.excavator.com</organizationUrl>
 		</developer>
-        <developer>
-            <id>shamphone</id>
-            <name>Tako</name>
-            <email>tako@gmail.com</email>
-            <organization>Excavator Software, Inc.</organization>
-            <organizationUrl>http://www.excavator.com</organizationUrl>
-        </developer>
 	</developers>
-	<scm>
-		<url>https://github.com/cocolian/cocolian-id</url>
-		<connection>scm:git:ssh://git@github.com:cocolian/cocolian-id.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:cocolian/cocolian-id.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>	
 </project>

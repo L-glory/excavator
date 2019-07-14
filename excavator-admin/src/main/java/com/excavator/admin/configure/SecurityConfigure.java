@@ -76,6 +76,8 @@ public class SecurityConfigure {
       return advisorAutoProxyCreator;
    }
 
+
+   // 这哥们提供了一个思路，铺抓异常类型，识别认证/授权失败结果
    /**
     * 解决： 无权限页面不跳转 shiroFilterFactoryBean.setUnauthorizedUrl("/unauthorized") 无效
     * shiro的源代码ShiroFilterFactoryBean.Java定义的filter必须满足filter instanceof AuthorizationFilter，
