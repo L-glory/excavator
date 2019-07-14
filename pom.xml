@@ -25,6 +25,21 @@
 
 	<dependencyManagement>
         <dependencies>
+            <!-- spring-shiro -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>1.4.1</version>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+            </dependency>
+
+
             <!-- 常用插件 -->
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>

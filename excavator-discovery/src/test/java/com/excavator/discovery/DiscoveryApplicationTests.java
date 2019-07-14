@@ -12,5 +12,4 @@ public class DiscoveryApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
