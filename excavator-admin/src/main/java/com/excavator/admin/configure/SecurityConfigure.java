@@ -1,5 +1,6 @@
 package com.excavator.admin.configure;
 
+import com.excavator.admin.security.LdapCredentialsMatcher;
 import com.excavator.admin.security.LdapRealm;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -24,7 +25,14 @@ public class SecurityConfigure {
 
    @Bean
    public LdapRealm ldapRealm() {
-       return new LdapRealm();
+      LdapRealm ldapRealm = new LdapRealm();
+      // 设置密码比较器
+      ldapRealm.setCredentialsMatcher(new LdapCredentialsMatcher());
+      // 设置缓存
+      ldapRealm.setCachingEnabled(Boolean.TRUE);
+      ldapRealm.setAuthorizationCachingEnabled(Boolean.TRUE);
+
+      return ldapRealm;
    }
 
    @Bean
@@ -67,4 +75,23 @@ public class SecurityConfigure {
       advisorAutoProxyCreator.setProxyTargetClass(true);
       return advisorAutoProxyCreator;
    }
+
+   /**
+    * 解决： 无权限页面不跳转 shiroFilterFactoryBean.setUnauthorizedUrl("/unauthorized") 无效
+    * shiro的源代码ShiroFilterFactoryBean.Java定义的filter必须满足filter instanceof AuthorizationFilter，
+    * 只有perms，roles，ssl，rest，port才是属于AuthorizationFilter，而anon，authcBasic，auchc，user是AuthenticationFilter，
+    * 所以unauthorizedUrl设置后页面不跳转 Shiro注解模式下，登录失败与没有权限都是通过抛出异常。
+    * 并且默认并没有去处理或者捕获这些异常。在SpringMVC下需要配置捕获相应异常来通知用户信息
+    * @return
+    */
+   /*@Bean
+   public SimpleMappingExceptionResolver simpleMappingExceptionResolver() {
+      SimpleMappingExceptionResolver simpleMappingExceptionResolver=new SimpleMappingExceptionResolver();
+      Properties properties=new Properties();
+      //这里的 /unauthorized 是页面，不是访问的路径
+      properties.setProperty("org.apache.shiro.authz.UnauthorizedException","/unauthorized");
+      properties.setProperty("org.apache.shiro.authz.UnauthenticatedException","/unauthorized");
+      simpleMappingExceptionResolver.setExceptionMappings(properties);
+      return simpleMappingExceptionResolver;
+   }*/
 }

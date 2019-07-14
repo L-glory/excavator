@@ -1,7 +1,9 @@
 package com.excavator.admin.controller;
 
 import com.excavator.admin.entity.LdapAuthToken;
+import com.excavator.admin.entity.SysUser;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +37,11 @@ public class SessionController {
         subject.login(LdapAuthToken.of(token));
 
         return ResponseEntity.ok((String)subject.getSession(true).getId());
+    }
+
+    @GetMapping("/user")
+    @RequiresPermissions("session:user:get")
+    public ResponseEntity<SysUser> getUser() {
+        return null;
     }
 }

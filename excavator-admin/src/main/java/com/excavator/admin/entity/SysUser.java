@@ -3,7 +3,9 @@ package com.excavator.admin.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.management.relation.Role;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 系统管理-用户信息
@@ -15,13 +17,16 @@ import java.util.Date;
 @NoArgsConstructor
 public class SysUser {
 
-    private Long id;
+    private Integer id;
 
     private String account;
 
     private String password;
 
     private String name;
+
+    // 用户角色
+    private List<Role> roles;
 
     private Date addTime;
 

@@ -2,7 +2,7 @@ package com.excavator.admin.security;
 
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
+import org.apache.shiro.authc.credential.CredentialsMatcher;
 
 /**
  * 密码认证
@@ -10,7 +10,7 @@ import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
  * @author Glory
  * @create 2019-07-14 17:08
  **/
-public class LdapCredentialsMatcher extends SimpleCredentialsMatcher {
+public class LdapCredentialsMatcher implements CredentialsMatcher {
 
     @Override
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {

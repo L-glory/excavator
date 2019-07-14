@@ -1,4 +1,4 @@
-package com.excavator.admin.dao;
+package com.excavator.admin.dao.system;
 
 import com.excavator.admin.entity.SysUser;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -39,7 +39,7 @@ public class SysUserDao {
     public SysUser get(String account) {
         return jdbcTemplate.queryForObject("SELECT * FROM t_sys_user WHERE account = ?", (ResultSet resultSet, int index) -> {
             SysUser user = new SysUser();
-            user.setId(resultSet.getLong("id"));
+            user.setId(resultSet.getInt("id"));
             user.setAccount(resultSet.getString("account"));
             user.setPassword(resultSet.getString("password"));
             user.setName(resultSet.getString("name"));
